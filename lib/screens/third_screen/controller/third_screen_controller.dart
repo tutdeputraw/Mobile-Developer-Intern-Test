@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:http/http.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -33,6 +35,10 @@ class ThirdScreenController extends GetxController with StateMixin {
   void cardOnClick(UserData data) {
     final selectedUser = Get.find<SelectedUserFeature>();
     selectedUser.setUserName('${data.firstName} ${data.lastName}');
+
+    ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(
+      content: Text('User ${data.firstName} ${data.lastName} just selected'),
+    ));
   }
 
   Future<void> onRefresh() async {

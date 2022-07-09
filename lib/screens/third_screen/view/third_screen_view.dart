@@ -51,7 +51,7 @@ class ThirdScreenView extends GetView<ThirdScreenController> {
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 18,
-          vertical: 15,
+          vertical: 5,
         ),
         child: Row(
           children: [
